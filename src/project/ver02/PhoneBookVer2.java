@@ -1,8 +1,6 @@
-package project1;
+package project.ver02;
 
 import java.util.Scanner;
-
-import ver02.Phoneinfo;
 
 public class PhoneBookVer2 {
 	
@@ -20,8 +18,6 @@ public static String OKorNOT(int n) {
 		System.exit(0);
 		str = "선택2";
 		str = "끝났어여";
-	default :
-		str = "제대로 입력하렴";break;
 	}
 	return str;
 	}

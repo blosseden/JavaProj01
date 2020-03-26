@@ -1,6 +1,4 @@
-package project1;
-
-import ver01.Phoneinfo;
+package project.ver01;
 
 public class PhoneBookVer01 {
 
