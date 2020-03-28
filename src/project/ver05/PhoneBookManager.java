@@ -1,4 +1,4 @@
- package project.ver04;
+ package project.ver05;
 
 import java.util.Scanner;
 
@@ -16,24 +16,22 @@ public class PhoneBookManager {
 		while(true) {
 			printMenu();
 			Scanner scan = new Scanner(System.in);
-			System.out.println("입력");
 			choice = scan.nextInt();
 			scan.nextLine();
 			switch(choice) {
-			case 1:
-			
+			case MenuItem.INPUT:
 				detaInput(choice);
 				break;
-			case 2:
+			case MenuItem.SEARCH:
 				searchInfo();
 				break;
-			case 3:
+			case MenuItem.DELETE:
 				deleteInfo();
 				break;
-			case 4:
+			case MenuItem.ALLDATA:
 				detaAllData();
 				break;
-			case 5:
+			case MenuItem.END:
 				System.out.println("끗");
 				return;
 			}
@@ -45,10 +43,10 @@ public class PhoneBookManager {
 		String iName, iPhone, iMajor, iYear, iCp;
 
 		System.out.println("고르십쇼 형님");
-		System.out.println("1. 사-람, 2. 동-창, 3.회-사");
+		System.out.println("1. 일-반, 2. 동-창, 3.회-사");
 		choice=scan.nextInt();
 		scan.nextLine();
-		if(choice==1) {
+		if(choice==SubMenuItem.WHOLE) {
 			//입력값 저장
 			System.out.println("써보란 말이야");
 
@@ -58,7 +56,7 @@ public class PhoneBookManager {
 
 			myInfo[numOfInfo++] = phoneinfo;
 		}
-		else if(choice==2) {
+		else if(choice==SubMenuItem.SCHOOL) {
 			System.out.println("써보란 말이야");
 
 			System.out.println("이름 :"); iName=scan.nextLine();	
@@ -68,7 +66,7 @@ public class PhoneBookManager {
 			myInfo[numOfInfo++] =
 					new PhoneSchoolinfo(iName, iPhone, iMajor, iYear);			
 		} 
-		else if(choice==3) {
+		else if(choice==SubMenuItem.CAMPANY) {
 			System.out.println("써보란 말이야");
 
 			System.out.println("이름 :"); iName=scan.nextLine();	
