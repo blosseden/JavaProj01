@@ -32,7 +32,7 @@ public class PhoneBookVer02 {
 				System.out.println("끗 ^오^b");
 				exit=false;
 			}else {
-				System.out.println("제대로 칠 줄 모름 ㅂㅆㄲ");
+				System.out.println("제대로 칠 줄 모름?");
 				return;
 			}
 		}
