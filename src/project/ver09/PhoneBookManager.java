@@ -42,11 +42,11 @@ public PhoneBookManager() {
 	}
 		catch (ClassNotFoundException e) {
 			System.out.println("오라클 드라이버 로딩실패");
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		catch (SQLException e) {
 			System.out.println("DB 연결 실패");
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		catch (Exception e) {
 			System.out.println(" 알 수 없는 예외 발생");
@@ -107,7 +107,7 @@ public PhoneBookManager() {
 	}
 	catch(SQLException e) {
 		System.out.println("DB 연결 실패");
-		e.printStackTrace();
+		System.out.println(e.getMessage());
 	}
 	catch(Exception e) {
 	System.out.println("알 수 없는 예외발생");
@@ -132,7 +132,7 @@ public PhoneBookManager() {
 		}
 		catch(SQLException e) {
 		System.out.println("쿼리오류발생");
-		e.printStackTrace();	
+		System.out.println(e.getMessage());
 		}
 		System.out.println("정보 출력이라능");
 		System.out.println("");
@@ -160,7 +160,7 @@ public PhoneBookManager() {
 			}
 		} catch (SQLException e) {
 			System.out.println("쿼리오류");
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 	public void deleteInfo() {
@@ -178,7 +178,7 @@ public PhoneBookManager() {
 		System.out.println("삭☆제★");
 	} catch (SQLException e) {
 			System.out.println("DB 연결 실패");
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 	}
 }
 

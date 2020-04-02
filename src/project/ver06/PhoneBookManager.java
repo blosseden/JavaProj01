@@ -4,9 +4,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PhoneBookManager {
-	Scanner scan = new Scanner(System.in);
+	public Scanner scan;
 	public Phoneinfo[] myInfo; 
-	public int numOfInfo;//정보를 추가할 때 마다 +1 증가
+	public int numOfInfo;
 	int choice;
 
 	public PhoneBookManager(int num) {
@@ -16,9 +16,9 @@ public class PhoneBookManager {
 	public void start() throws MenuSelectException {
 
 		while(true) {
-			try { 
+			try {
+				scan = new Scanner(System.in);
 				printMenu();
-				Scanner scan = new Scanner(System.in);
 				choice = scan.nextInt();
 				scan.nextLine();
 
@@ -49,15 +49,11 @@ public class PhoneBookManager {
 				System.out.println("숫자 입력하라고 숫자");
 			}catch (MenuSelectException e) {
 
-			}catch(NullPointerException e) {
-				System.out.println("그런분 안계십니다"); 
 			}
 		} 
 	}
 
-
 	public void detaInput(int choice) {
-		Scanner scan = new Scanner(System.in);
 
 		String iName, iPhone, iMajor, iYear, iCp;
 
@@ -108,10 +104,8 @@ public class PhoneBookManager {
 
 	public void searchInfo() {
 		boolean searchflag=false;
-		Scanner scan = new Scanner(System.in);
 		System.out.println("검색 할 이름을 입력 하세요 : ");
 		String searchName=scan.nextLine();
-
 
 		for(int i=0; i<numOfInfo;i++) {
 			System.out.println("");
@@ -121,16 +115,15 @@ public class PhoneBookManager {
 				searchflag=true;
 				System.out.println("너가 찾은 존함이 이분이십니까?");
 				System.out.println("");
+				break;
 			}
 			if(searchflag==false) {
 				NullPointerException nullPointerException = new NullPointerException();
 				throw nullPointerException;
 			}
 		}
-
 	}
 	public void deleteInfo() {
-		Scanner scan=new Scanner(System.in);
 		System.out.println("삭제할 이름을 입력하세요");
 		String deleteName=scan.nextLine();
 		/*
